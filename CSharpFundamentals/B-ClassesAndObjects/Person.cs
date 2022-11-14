@@ -9,7 +9,7 @@
 // Static: C#, Java, C++, C
 
 // C# is multi-paradigm language
-
+namespace LivingThings;
 class Person
 {
     public string name;
@@ -27,4 +27,3 @@ class Person
         }
     }
 }
-
