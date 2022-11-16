@@ -8,5 +8,13 @@
 1. Get a number from a user and do following:
     1. If number is divisible by 2, print "Its even number"
     2. If number is divisible by 3, print "Its multiple of 3"
-    1. if its divisible by 3 and 5, print "its multiple of 3 and 5"
-    
+    1. If its divisible by 5, print "its multiple of 5"
+    1. If its not divisible by any of above, print "Not divisible by 2, 3 and 5"
+1. Print following matrix on console using nested loops:
+    ```
+    1 2  3  4
+    5 6  7  8
+    9 10 11 12
+    ```
+
+
