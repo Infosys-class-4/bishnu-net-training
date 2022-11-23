@@ -23,9 +23,7 @@ class Methods
 
     // Expression bodied members
     public double AddNumbers(double num1, double num2, double num3 = 0) => num1 + num2 + num3;
-        
-    
-
+       
     // returns something, takes arbitrary number of arguments
     public long Multiply(params int[] numbers)
     {
