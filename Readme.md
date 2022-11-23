@@ -35,7 +35,8 @@
 .........................
 
 ```
-
-
-1. 
-
+1. Think of a class inside new file that can contain following members:
+    1. Create 2 fields
+    2. Create a method having two parameters and returns something
+    1. Add a new expression bodied method
+    1. Add a method whichf returns two values at a time
