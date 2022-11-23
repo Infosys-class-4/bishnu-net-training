@@ -17,9 +17,11 @@ class EntryPoint
 
         Methods m = new();
         m.Print();
-        m.PrintSomething("I am yet another method");
+        m.Print("I am yet another method");
         var s = m.Add(45.67, 67.89, 12.4);
         var s1 = m.Add(45.67, 67.89);
+        var s2 = m.AddNumbers(45.67, 67.89);
+
         var p1 = m.Multiply(5, 6, 7, 8);
         var p2 = m.Multiply(5, 6, 7, 8, 10, 45, 23, 45);
 
@@ -28,6 +30,14 @@ class EntryPoint
         byte[] numbers = { 34, 56, 12, 33, 89, 65, 21, 90 };
         var (minimum, maximum) = m.GetMinMax(numbers);
         
+        var av = m.CalculateAverage(3,4,5,6);
+        Console.WriteLine($"Average1={av}");
 
+        float[] nums = { 34.5f, 56, 12, 33, 89, 65, 21, 90, 40, 23 };
+        av = m.CalculateAverage(nums);
+        Console.WriteLine($"Average2={av}");
+
+        var (average, min) = m.CalculateAverageAndMinimum(34, 56, 12, 33, 89, 65, 21, 90, 40, 23, 2, 10, -1);
+        Console.WriteLine($"Average3={average}, Minimum={min}");
     }
 }
