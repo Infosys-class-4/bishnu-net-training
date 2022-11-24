@@ -1,4 +1,5 @@
 ﻿using System;
+using LivingThings;
 
 class EntryPoint
 {
@@ -39,5 +40,23 @@ class EntryPoint
 
         var (average, min) = m.CalculateAverageAndMinimum(34, 56, 12, 33, 89, 65, 21, 90, 40, 23, 2, 10, -1);
         Console.WriteLine($"Average3={average}, Minimum={min}");
+    
+        var puppy = new Animal("dog", 4);
+        var meow = new Animal();
+        
+        //puppy.category = "dog";
+        var x = puppy.category;
+        var l = puppy.numberOfLegs;
+
+
+        Employee emp = new();
+        emp.Name = "Bishnu";
+        emp.Name = "Ba";
+        emp.Name = "Bla";
+        emp.Name = "B";
+
+        var y = emp.Salary;
+
+        var t = emp.Name;
     }
 }
