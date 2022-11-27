@@ -58,5 +58,21 @@ class EntryPoint
         var y = emp.Salary;
 
         var t = emp.Name;
+
+        House house1 = new House(4, 40);
+        house1.Length = 34.6f;
+        house1.Width = 23.89f;
+        var chatAreaHouse1 = house1.GetAreaOfChat();
+
+        House house2 = new House(50, 400, 45.34f, 20.56f);
+        var chatAreaHouse2 = house2.GetAreaOfChat();
+        
+
+        House house3 = new House(5, 23);
+        House house4 = new House(1, 4);
+
+        Mansion m1 = new Mansion();
+        
+
     }
 }
