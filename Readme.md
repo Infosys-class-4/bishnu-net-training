@@ -40,3 +40,10 @@
     2. Create a method having two parameters and returns something
     1. Add a new expression bodied method
     1. Add a method whichf returns two values at a time
+1. Think of a real world class which contains: 
+    1. 3 fields, 
+    1. a parameterless constructor, 
+    1. a constructor with 2 parameters and 
+    1. a method
+    1. a property with full definition
+    1. a read only property
