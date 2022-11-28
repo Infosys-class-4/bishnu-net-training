@@ -47,3 +47,4 @@
     1. a method
     1. a property with full definition
     1. a read only property
+1. Write an example classes which explains multi-level inheritance.
