@@ -73,6 +73,7 @@ class EntryPoint
 
         Mansion m1 = new Mansion();
         
-
+        IB d1 = new D();
+        d1.Start();
     }
 }
