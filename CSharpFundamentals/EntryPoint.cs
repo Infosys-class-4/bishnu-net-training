@@ -75,5 +75,9 @@ class EntryPoint
         
         IB d1 = new D();
         d1.Start();
+
+        Collection coll = new Collection();
+        coll.LearnList();
+        coll.LearnDictionary();
     }
 }
