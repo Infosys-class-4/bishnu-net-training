@@ -48,3 +48,9 @@
     1. a property with full definition
     1. a read only property
 1. Write an example classes which explains multi-level inheritance.
+1. We have following array:
+    ```
+    byte[] numbers = { 23, 45, 11, 21, 33, 12, 90, 98, 87, 65, 55, 99, 234, 76, 10, 82 };
+   ```
+   1. Find squares of all numbers which are greater than 70
+   1. Find square root of all numbers which are multiple of 3
