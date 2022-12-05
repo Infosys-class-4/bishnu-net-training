@@ -12,6 +12,7 @@
 namespace LivingThings;
 class Person
 {
+    public static string sName = "Homo Sepians";
     public string name;
     public byte age;
 

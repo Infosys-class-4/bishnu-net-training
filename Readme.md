@@ -54,3 +54,7 @@
    ```
    1. Find squares of all numbers which are greater than 70
    1. Find square root of all numbers which are multiple of 3
+1. Create list/array of animals using `Animal` class we wrote.
+    1. Query that collection to find following:
+        1. Get list of all domestic animals
+        1. Get list of animals which has more than 4 legs 
