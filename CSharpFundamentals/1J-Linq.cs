@@ -89,6 +89,7 @@ class LINQ
 
         // Get all people who are adult now
         var adults = people.Where(x => x.age > 18);
+        
     }
 
     void PrintOutput<T>(IEnumerable<T> items, string displayText)
