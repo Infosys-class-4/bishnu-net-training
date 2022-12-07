@@ -58,3 +58,4 @@
     1. Query that collection to find following:
         1. Get list of all domestic animals
         1. Get list of animals which has more than 4 legs 
+1. Create a web page containing a form for a employee to enter his/her details. Style (Alignment, font color etc.) all form elements properly using external css.
