@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My first page</title>        
+        <title>My first page</title>   
+        <link rel="stylesheet" href="Styles/person.css" />             
     </head>
     <body>
         <p>Hello there!!!</p>
         <!-- <p>I am learning web dev now</p> -->
-        
-        <!-- Create a list of vegetables -->
-        
-        <!-- Create a table to show multiple person details -->        
-        
+        <!-- CSS - Cascading Style Sheets -->
+        <form> 
+            <label class="lstyle">Name</label>           
+            <input type="text" placeholder="Enter your name..."/>
+            <br/>
+            <label class="lstyle">Password</label>
+            <input type="password" />
+            <br/>
+            <label class="lstyle">Date of birth</label>
+            <input type="date" />
+            <br/>
+            <label class="lstyle">Your bio</label>
+            <textarea rows="5" cols="50">
+            </textarea>
+            
+            <br/>
+            <label class="lstyle">Gender</label>
+            <input type="radio" name="g"/> Male
+            <input type="radio" name="g" checked /> Female
+            <input type="radio" name="g"/> Others
+            
+            <br/>
+            <label class="lstyle">Your country</label>
+            <select>
+                <option>Nepal</option>
+                <option>India</option>
+                <option>China</option>
+                <option>Bhutan</option>
+            </select>
+            <br/>
+            <label class="lstyle">Education</label>
+            <input type="checkbox" /> High School
+            <input type="checkbox" /> Undergarduate
+            <input type="checkbox" /> Graduation
+            <input type="checkbox" /> Post Doc
+            <br/>
+            <input type="submit" value="Save Details" /> 
+        </form>
     </body>
 </html>
