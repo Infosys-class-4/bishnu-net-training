@@ -59,3 +59,5 @@
         1. Get list of all domestic animals
         1. Get list of animals which has more than 4 legs 
 1. Create a web page containing a form for a employee to enter his/her details. Style (Alignment, font color etc.) all form elements properly using external css.
+
+1. On existing **Test** controller, add new action which takes one query parameter *upto* from user and print multiplication table from 1 to *upto* on a page.
