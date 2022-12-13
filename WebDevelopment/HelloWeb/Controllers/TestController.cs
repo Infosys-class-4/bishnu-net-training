@@ -6,4 +6,9 @@ public class TestController: Controller
     {
         return View(num);
     }
+
+    public IActionResult MultiplicationTable(int upto)
+    {
+        return View(upto);
+    }
 }
