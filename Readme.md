@@ -61,3 +61,5 @@
 1. Create a web page containing a form for a employee to enter his/her details. Style (Alignment, font color etc.) all form elements properly using external css.
 
 1. On existing **Test** controller, add new action which takes one query parameter *upto* from user and print multiplication table from 1 to *upto* on a page.
+
+1. Create new employee MVC controller and add an action on it. This action will bind list of employee names to its view and renders those names on the page using bootstrap list group.
