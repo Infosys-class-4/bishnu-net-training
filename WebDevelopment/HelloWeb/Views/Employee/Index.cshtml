@@ -1,0 +1,11 @@
+﻿@model string[]
+
+<h2>Employees List</h2>
+
+
+<ol>
+    @foreach (var name in Model)
+    {
+        <li>@name</li>
+    }
+</ol>
