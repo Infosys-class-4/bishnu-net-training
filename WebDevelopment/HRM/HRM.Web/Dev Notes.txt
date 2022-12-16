@@ -1,0 +1,12 @@
+
+- HRM
+
+- Employee (First, Last, Sex, Address, Dob, Designation, Department)
+
+- Hierarchy
+- Designations
+- Departments
+- Policy
+- Benefits
+
+CRUD - Create Read Update Delete
