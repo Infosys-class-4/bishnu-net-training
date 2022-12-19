@@ -32,4 +32,16 @@ public class EmployeeController : Controller
 
         return View(employees);
     }
+        
+    public IActionResult Add()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Add(Employee employee)
+    {
+        // Do something with employee
+        return RedirectToAction("Index");
+    }
 }
