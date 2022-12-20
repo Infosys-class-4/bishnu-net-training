@@ -2,6 +2,7 @@
 - HRM
 
 - Employee (First, Last, Sex, Address, Dob, Designation, Department)
+- EmployeeDetails
 
 - Hierarchy
 - Designations
@@ -10,3 +11,24 @@
 - Benefits
 
 CRUD - Create Read Update Delete
+
+
+Database Programming
+===============================
+Databases:
+1. Relational Databases - MySql, Sql Server*, SqLite, Oracle, Postegres etc.
+2. No SQL Databases - Mongodb, Dynamodb etc.
+
+Data Access Code:
+1. ADO.NET Library (Active Data Objects on top on .NET)
+2. ORM (Object Relational Mapper) tool: EF Core*, Dapper, NHibernate, RepoDb etc.
+
+SQL Server local db instance
+	- (localdb)\mssqllocaldb
+Approahes:
+	- Database first
+	- Code first*
+
+
+Note: * <- We will be using this tool/appraoch in our course
+
