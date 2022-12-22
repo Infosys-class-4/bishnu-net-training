@@ -10,6 +10,7 @@
         <th>Date Of Birth</th>
         <th>Department</th>
         <th>Designation</th>
+        <th>Bio</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -21,6 +22,7 @@
             <td>@item.Dob.ToString("MMMM dd, yyyy")</td>
             <td>@item.Department</td>
             <td>@item.Designation</td>
+            <td>@item.Bio</td>
         </tr>
     }
 </table>
