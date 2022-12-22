@@ -32,3 +32,11 @@ Approahes:
 
 Note: * <- We will be using this tool/appraoch in our course
 
+
+
+EF Core
+===================
+1. Add packages: EF Core etc.
+2. Add model and dbcontext class
+3. Install dotnet-ef tool
+4. Execute migration command
