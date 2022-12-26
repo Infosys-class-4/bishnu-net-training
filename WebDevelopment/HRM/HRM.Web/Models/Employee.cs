@@ -5,10 +5,11 @@ public class Employee
 {    
     public int Id { get; set; }
 
-    [Display(Name = "Your First Name")]
+    [Display(Name = "First Name")]
+    [MinLength(2)]
     public string FirstName { get; set; } = string.Empty;
 
-    [Display(Name = "Your Last Name")]
+    [Display(Name = "Last Name")]
     public string LastName { get; set; } = string.Empty;
 
     public char Gender { get; set; } = 'M';
