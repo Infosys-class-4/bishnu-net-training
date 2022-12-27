@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
 namespace HRM.Models;
+
 public class Employee
 {    
     public int Id { get; set; }
