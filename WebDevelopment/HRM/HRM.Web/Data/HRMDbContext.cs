@@ -1,4 +1,5 @@
 ﻿using HRM.Models;
+using HRM.Web.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HRM.Web.Data
@@ -6,6 +7,7 @@ namespace HRM.Web.Data
     public class HRMDbContext : DbContext
     {
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Department> Departments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
