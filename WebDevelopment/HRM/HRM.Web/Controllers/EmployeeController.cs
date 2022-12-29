@@ -1,6 +1,8 @@
 ﻿using HRM.Models;
 using HRM.Web.Data;
+using HRM.Web.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HRM.Web.Controllers;
 public class EmployeeController : Controller
@@ -15,6 +17,10 @@ public class EmployeeController : Controller
 
     public IActionResult Add()
     {
+        var departments = db.Departments.ToList();
+        var selectListItems = departments.Select(x => new SelectListItem { Text = x.Name, Value = x.Name });
+        ViewData["DepartmentList"] = selectListItems;        
+
         return View();
     }
 
