@@ -37,8 +37,27 @@
                                 Admin
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" asp-controller="Departments" asp-action="Index"><i class="bi bi-list-ol"></i> All Departments</a></li>
-                                <li><a class="dropdown-item" asp-controller="Departments" asp-action="Create"><i class="bi bi-plus-lg"></i> New Department</a></li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Departments" asp-action="Index">
+                                        <i class="bi bi-list-ol"></i> All Departments
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Departments" asp-action="Create">
+                                        <i class="bi bi-plus-lg"></i> New Department
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Designations" asp-action="Index">
+                                        <i class="bi bi-list-ol"></i> All Designations
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Designations" asp-action="Create">
+                                        <i class="bi bi-plus-lg"></i> New Designation
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
