@@ -22,29 +22,15 @@ namespace HRM.Web.Controllers
         // GET: Departments
         public async Task<IActionResult> Index()
         {
-              return _context.Departments != null ? 
-                          View(await _context.Departments.ToListAsync()) :
-                          Problem("Entity set 'HRMDbContext.Departments'  is null.");
+            if (_context.Departments == null)
+                return Problem("Entity set 'HRMDbContext.Departments'  is null.");
+
+            var departments = await _context.Departments.ToListAsync();
+
+            return View(departments);
         }
 
-        // GET: Departments/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.Departments == null)
-            {
-                return NotFound();
-            }
-
-            var department = await _context.Departments
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (department == null)
-            {
-                return NotFound();
-            }
-
-            return View(department);
-        }
-
+        
         // GET: Departments/Create
         public IActionResult Create()
         {

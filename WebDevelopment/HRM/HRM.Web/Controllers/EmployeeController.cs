@@ -3,6 +3,8 @@ using HRM.Web.Data;
 using HRM.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System.IO;
 
 namespace HRM.Web.Controllers;
 public class EmployeeController : Controller
@@ -10,32 +12,59 @@ public class EmployeeController : Controller
     HRMDbContext db = new();
     public IActionResult Index()
     {
+        if (db.Employees == null)
+            return Problem("Employees dbset don't exist");
+
         var employees = db.Employees.ToList();
-        
+
         return View(employees);
     }
 
-    public IActionResult Add()
+    public async Task<IActionResult> Add()
     {
-        var departments = db.Departments.ToList();
+        var departments = await db.Departments.ToListAsync();
         var selectListItems = departments.Select(x => new SelectListItem { Text = x.Name, Value = x.Name });
-        ViewData["DepartmentList"] = selectListItems;        
+        ViewData["DepartmentList"] = selectListItems;
 
         return View();
     }
 
     [HttpPost]
-    public IActionResult Add(Employee employee)
+    public async Task<IActionResult> Add(Employee employee)
     {
-        db.Employees.Add(employee);
-        db.SaveChanges();
+        if (ModelState.IsValid)
+        {
+            // Save image to "profiles" folder
+            var file = employee.ProfileImage;
+            var fileName = file.FileName;  //my.photo.jpg
+            var indexOfDot = fileName.LastIndexOf(".");
+            var fileExtenstion = fileName.Substring(indexOfDot);
+            var filePath = $"~/images/profiles/{Guid.NewGuid()}{fileExtenstion}";
+            
+            using var stream = System.IO.File.Create(filePath);            
+            file.CopyTo(stream);
 
-        return RedirectToAction("Index");
+            // Add employee record to db
+            employee.ProfileImageName = filePath;
+
+            await db.Employees.AddAsync(employee);
+            await db.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+        return View(employee);
     }
 
-    public IActionResult Edit(int id)
+    public IActionResult Edit(int? id)
     {
+        if (id == null)
+            return NotFound();
+
         var employee = db.Find<Employee>(id);
+        if (employee is null)
+            return NotFound();
+
         return View(employee);
     }
 
@@ -55,10 +84,10 @@ public class EmployeeController : Controller
     }
 
     [HttpPost]
-    public IActionResult Delete(Employee employee)
+    public async Task<IActionResult> Delete(Employee employee)
     {
         db.Employees.Remove(employee);
-        db.SaveChanges();
+        await db.SaveChangesAsync();
 
         return RedirectToAction("Index");
     }

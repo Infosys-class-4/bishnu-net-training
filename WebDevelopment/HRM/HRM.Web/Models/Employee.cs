@@ -1,5 +1,7 @@
 ﻿using HRM.Web.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace HRM.Models;
 
 public class Employee
@@ -22,4 +24,9 @@ public class Employee
     public string Designation { get; set; } = string.Empty;
     public string Department { get; set; } = string.Empty;
     public string? Bio { get; set; } = string.Empty;
+
+    [NotMapped]
+    public IFormFile ProfileImage { get; set; }
+
+    public string? ProfileImageName { get; set; }
 }
