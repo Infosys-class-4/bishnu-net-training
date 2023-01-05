@@ -13,7 +13,7 @@ public class EmployeeController : Controller
         if (db.Employees == null)
             return Problem("Employees dbset don't exist");
 
-        var employees = db.Employees.Include(e => e.Department).ToList();
+        var employees = db.Employees.Include(e => e.Department).Include(e => e.Designation).ToList();
 
         return View(employees);
     }
@@ -23,6 +23,10 @@ public class EmployeeController : Controller
         var departments = await db.Departments.ToListAsync();
         var selectListItems = departments.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
         ViewData["DepartmentList"] = selectListItems;
+
+        var designations = await db.Designations
+            .Select(d => new SelectListItem { Text = d.Title, Value = d.Id.ToString() }).ToListAsync();
+        ViewData["DesignationList"] = designations;
 
         return View();
     }

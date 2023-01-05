@@ -7,4 +7,6 @@ public class Designation
     public string Title { get; set; }
     public string? Description { get; set; }
     public Role Role { get; set; }
+
+    public List<Employee>? Employees { get; set; }
 }

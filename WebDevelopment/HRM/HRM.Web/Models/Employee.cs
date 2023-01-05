@@ -21,8 +21,6 @@ public class Employee
 
     [Display(Name = "Date Of Birth")]
     public DateTime? Dob { get; set; }
-
-    public string Designation { get; set; } = string.Empty;
     public string? Bio { get; set; } = string.Empty;
 
     [NotMapped]
@@ -32,4 +30,7 @@ public class Employee
 
     public Department? Department { get; set; }
     public int DepartmentId { get; set; }
+
+    public Designation? Designation { get; set; }
+    public int DesignationId { get; set; }
 }

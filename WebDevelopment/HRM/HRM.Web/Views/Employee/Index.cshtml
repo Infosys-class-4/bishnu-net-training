@@ -24,7 +24,7 @@
             <td>@item.Gender</td>
             <td>@item.Dob?.ToString("MMMM dd, yyyy")</td>
             <td>@item.Department?.Name</td>
-            <td>@item.Designation</td>
+            <td>@item.Designation?.Title</td>
             <td>@item.Bio</td>
             <td>
                 <a href="/employee/edit/@item.Id"><i class="bi bi-pencil-fill text-warning"></i></a>

@@ -4,6 +4,7 @@
 
 @{
     var departments = ViewData["DepartmentList"] as IEnumerable<SelectListItem>;
+    var designations = ViewData["DesignationList"] as IEnumerable<SelectListItem>;
 }
 
 <h3 class="text-center">New Employee Form</h3>
@@ -43,7 +44,8 @@
 
     <div class="mb-3 col-6">
         <label asp-for=Designation class="form-label"></label>
-        <input asp-for=Designation type="text" class="form-control">
+        <select asp-for=DesignationId asp-items=designations class="form-control">
+        </select>
     </div>
 
     <div class="mb-3 col-6">
@@ -63,7 +65,7 @@
     </div>
     <div class="mb-3 col-12">
         <label asp-for=ProfileImage class="form-label"></label>
-        <input asp-for=ProfileImage class="form-control"/>
+        <input asp-for=ProfileImage class="form-control" />
     </div>
     <button type="submit" class="btn btn-success"><i class="bi bi-save"></i> Save</button>
 </form>
