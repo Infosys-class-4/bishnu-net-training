@@ -1,4 +1,5 @@
 ﻿using HRM.Web.Enums;
+using HRM.Web.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -22,11 +23,13 @@ public class Employee
     public DateTime? Dob { get; set; }
 
     public string Designation { get; set; } = string.Empty;
-    public string Department { get; set; } = string.Empty;
     public string? Bio { get; set; } = string.Empty;
 
     [NotMapped]
     public IFormFile ProfileImage { get; set; }
 
     public string? ProfileImageName { get; set; }
+
+    public Department? Department { get; set; }
+    public int DepartmentId { get; set; }
 }

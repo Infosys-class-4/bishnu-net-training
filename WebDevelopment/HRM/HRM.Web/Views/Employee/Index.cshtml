@@ -15,14 +15,15 @@
     </tr>
     @foreach (var item in Model)
     {
+        var imagePath = string.IsNullOrEmpty(item.ProfileImageName) ? "/images/person.png" : item.ProfileImageName;
         <tr>
-            <td><img src="/images/person.png" height="20"></td>
+            <td><img src="@imagePath" class="rounded-circle" height="30"></td>
             <td>@item.FirstName</td>
             <td>@item.LastName</td>
             <td>@item.Address</td>
             <td>@item.Gender</td>
             <td>@item.Dob?.ToString("MMMM dd, yyyy")</td>
-            <td>@item.Department</td>
+            <td>@item.Department?.Name</td>
             <td>@item.Designation</td>
             <td>@item.Bio</td>
             <td>

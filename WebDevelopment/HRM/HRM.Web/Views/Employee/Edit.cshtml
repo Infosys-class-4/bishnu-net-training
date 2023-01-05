@@ -1,6 +1,6 @@
 ﻿@model Employee
 
-<form class="row" action="/Employee/Edit" method="post">
+<form class="row" action="/Employee/Edit" method="post" enctype="multipart/form-data">
     <input type="hidden" asp-for="Id" />
     <div class="mb-3 col-6">
         <label asp-for="FirstName" class="form-label"></label>
@@ -16,15 +16,15 @@
         <label asp-for=Gender class="form-label"></label>
         <div>
             <div class="form-check form-check-inline">
-                <input asp-for=Gender class="form-check-input" type="radio" value="m">
+                <input asp-for=Gender class="form-check-input" type="radio" value="@Gender.Male">
                 <label asp-for=Gender class="form-check-label">Male</label>
             </div>
             <div class="form-check form-check-inline">
-                <input asp-for=Gender class="form-check-input" type="radio" value="f">
+                <input asp-for=Gender class="form-check-input" type="radio" value="@Gender.Female">
                 <label asp-for=Gender class="form-check-label">Female</label>
             </div>
             <div asp-for=Gender class="form-check form-check-inline">
-                <input asp-for=Gender class="form-check-input" type="radio" value="o">
+                <input asp-for=Gender class="form-check-input" type="radio" value="@Gender.Others">
                 <label asp-for=Gender class="form-check-label">Others</label>
             </div>
         </div>
@@ -51,6 +51,10 @@
     <div class="mb-3 col-6">
         <label asp-for=Bio class="form-label">Bio</label>
         <textarea asp-for=Bio class="form-control" rows="3"></textarea>
+    </div>
+    <div class="mb-3 col-12">
+        <label asp-for=ProfileImage class="form-label"></label>
+        <input asp-for=ProfileImage class="form-control" />
     </div>
     <a class="btn btn-danger w-25" href="/employee/index"><i class="bi bi-x-circle"></i> Cancel</a>
     <button type="submit" class="btn btn-success w-25 ms-2"><i class="bi bi-save"></i> Update</button>
