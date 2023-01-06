@@ -1,5 +1,7 @@
 ﻿using HRM.Models;
+using HRM.ViewModels;
 using HRM.Web.Data;
+using HRM.Web.Mapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +17,9 @@ public class EmployeeController : Controller
 
         var employees = db.Employees.Include(e => e.Department).Include(e => e.Designation).ToList();
 
-        return View(employees);
+        var employeeViewModels = employees.ToViewModel();
+
+        return View(employeeViewModels);
     }
 
     public async Task<IActionResult> Add()
@@ -32,13 +36,15 @@ public class EmployeeController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Add(Employee employee)
+    public async Task<IActionResult> Add(EmployeeViewModel employeeViewModel)
     {
         if (ModelState.IsValid)
         {
-            var profileRelativePath = SaveProfileImage(employee.ProfileImage);
+            var profileRelativePath = SaveProfileImage(employeeViewModel.ProfileImage);
             // Add employee record to db
-            employee.ProfileImageName = profileRelativePath;
+            employeeViewModel.ProfileImageName = profileRelativePath;
+
+            var employee = employeeViewModel.ToModel();
 
             await db.Employees.AddAsync(employee);
             await db.SaveChangesAsync();
@@ -46,7 +52,7 @@ public class EmployeeController : Controller
             return RedirectToAction("Index");
         }
 
-        return View(employee);
+        return View(employeeViewModel);
     }
 
     public IActionResult Edit(int? id)
@@ -66,8 +72,8 @@ public class EmployeeController : Controller
     {
         if (ModelState.IsValid)
         {
-            var relativePath = SaveProfileImage(employee.ProfileImage);
-            employee.ProfileImageName = relativePath;
+            //var relativePath = SaveProfileImage(employee.ProfileImage);
+            //employee.ProfileImageName = relativePath;
 
             db.Employees.Update(employee);
             db.SaveChanges();

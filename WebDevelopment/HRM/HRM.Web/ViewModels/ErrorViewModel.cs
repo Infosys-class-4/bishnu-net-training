@@ -1,4 +1,4 @@
-namespace HRM.Web.Models
+namespace HRM.Web.ViewModels
 {
     public class ErrorViewModel
     {

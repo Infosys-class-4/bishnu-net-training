@@ -1,4 +1,5 @@
 ﻿using HRM.Web.Models;
+using HRM.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

@@ -1,4 +1,4 @@
-﻿@model List<Employee>
+﻿@model List<EmployeeViewModel>
 
 <table class="table">
     <tr>
@@ -23,8 +23,8 @@
             <td>@item.Address</td>
             <td>@item.Gender</td>
             <td>@item.Dob?.ToString("MMMM dd, yyyy")</td>
-            <td>@item.Department?.Name</td>
-            <td>@item.Designation?.Title</td>
+            <td>@item.DepartmentName</td>
+            <td>@item.DesignationTitle</td>
             <td>@item.Bio</td>
             <td>
                 <a href="/employee/edit/@item.Id"><i class="bi bi-pencil-fill text-warning"></i></a>

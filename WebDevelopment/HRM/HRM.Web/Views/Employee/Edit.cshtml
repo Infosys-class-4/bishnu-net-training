@@ -1,4 +1,4 @@
-﻿@model Employee
+﻿@model EmployeeViewModel
 
 <form class="row" action="/Employee/Edit" method="post" enctype="multipart/form-data">
     <input type="hidden" asp-for="Id" />
@@ -35,13 +35,13 @@
     </div>
 
     <div class="mb-3 col-6">
-        <label asp-for=Designation class="form-label"></label>
-        <input asp-for=Designation type="text" class="form-control">
+        <label asp-for=DesignationTitle class="form-label"></label>
+        <input asp-for=DesignationId type="text" class="form-control">
     </div>
 
     <div class="mb-3 col-6">
-        <label asp-for=Department class="form-label">Department</label>
-        <input asp-for=Department type="text" class="form-control">
+        <label asp-for=DepartmentName class="form-label">Department</label>
+        <input asp-for=DepartmentId type="text" class="form-control">
     </div>
 
     <div class="mb-3 col-6">
