@@ -10,6 +10,8 @@ builder.Services.AddControllersWithViews();
 //    options.UseSqlServer("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=HRM;Integrated Security=true")
 //);
 
+builder.Services.AddDbContext<HRMDbContext>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

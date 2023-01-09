@@ -9,7 +9,13 @@ using Microsoft.EntityFrameworkCore;
 namespace HRM.Web.Controllers;
 public class EmployeeController : Controller
 {
-    HRMDbContext db = new();
+    private readonly HRMDbContext db;
+
+    public EmployeeController(HRMDbContext _db)
+    {
+        db = _db;
+    }
+
     public IActionResult Index()
     {
         if (db.Employees == null)

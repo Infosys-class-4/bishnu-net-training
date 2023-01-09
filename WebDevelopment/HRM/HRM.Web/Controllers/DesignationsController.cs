@@ -12,12 +12,12 @@ namespace HRM.Web.Controllers
 {
     public class DesignationsController : Controller
     {
-        private readonly HRMDbContext _context = new();
+        private readonly HRMDbContext _context;
 
-        //public DesignationsController(HRMDbContext context)
-        //{
-        //    _context = context;
-        //}
+        public DesignationsController(HRMDbContext context)
+        {
+            _context = context;
+        }
 
         // GET: Designations
         public async Task<IActionResult> Index()

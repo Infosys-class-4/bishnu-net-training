@@ -7,14 +7,14 @@ namespace HRM.Api.Controllers
     [ApiController]
     public class TestController : ControllerBase
     {
-        [Route("greet")]
+        [HttpGet("greet")]
         public string[] Greet()
         {
             string[] greets = { "Hello", "Namaste", "Hi", "Hey", "Mar" };
             return greets;
         }
 
-        [Route("people")]
+        [HttpGet("people")]
         public List<Person> GetPeople()
         {
             var man6eharu = new List<Person>
