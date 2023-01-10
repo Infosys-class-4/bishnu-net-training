@@ -40,5 +40,22 @@ namespace HRM.Api.Controllers
             await dbContext.SaveChangesAsync();
             return CreatedAtAction("Get", employee.Id);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> Put(Employee employee)
+        {
+            dbContext.Employees.Update(employee);
+            await dbContext.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var employee = dbContext.Employees.Find(id);
+            dbContext.Employees.Remove(employee);
+            await dbContext.SaveChangesAsync();
+            return NoContent();
+        }
     }
 }
